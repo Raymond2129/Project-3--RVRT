@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import van from './images/van.png';
 import {
   Collapse,
   Navbar,
@@ -14,6 +15,7 @@ import PropTypes from 'prop-types';
 import RegisterModal from './auth/RegisterModal';
 import LoginModal from './auth/LoginModal';
 import Logout from './auth/Logout';
+
 
 class AppNavbar extends Component {
   state = {
@@ -58,10 +60,11 @@ class AppNavbar extends Component {
     );
 
     return (
-      <div>
-        <Navbar color='dark' expand='sm' className='mb-5'><img src="/images/car.jpg" alt="rv image"></img>
+       <div>
+      
+        <Navbar color='' expand='sm' className='mb-5'><img src={van} alt="Logo" />
           <Container>
-            <NavbarBrand href='/'>RV Rubber Tramps</NavbarBrand>
+            <NavbarBrand href='/'><h1>RV Rubber Tramps</h1></NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className='ml-auto' navbar>

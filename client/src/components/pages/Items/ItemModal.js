@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from './node_modules/react';
 import {
   Button,
   Modal,
@@ -8,10 +8,10 @@ import {
   FormGroup,
   Label,
   Input
-} from 'reactstrap';
-import { connect } from 'react-redux';
+} from './node_modules/reactstrap';
+import { connect } from './node_modules/react-redux';
 import { addItem } from '../actions/itemActions';
-import PropTypes from 'prop-types';
+import PropTypes from './node_modules/prop-types';
 
 class ItemModal extends Component {
   state = {
@@ -92,6 +92,8 @@ const mapStateToProps = state => ({
   item: state.item,
   isAuthenticated: state.auth.isAuthenticated
 });
+
+// export default ItemModal;
 
 export default connect(
   mapStateToProps,

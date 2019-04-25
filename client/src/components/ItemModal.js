@@ -59,7 +59,7 @@ class ItemModal extends Component {
             Add Item
           </Button>
         ) : (
-          <h4 className='mb-3 ml-4'>Log in to plan your next RV adventure! New to the site? Register now to be part of the RV adventure.</h4>
+          <h4 className='mb-3 ml-4'>Log in to plan your next RV adventure!</h4>
 
         )}
 

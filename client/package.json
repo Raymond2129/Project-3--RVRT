@@ -9,6 +9,7 @@
     "react-dom": "^16.8.3",
     "react-redux": "^6.0.1",
     "react-scripts": "^2.1.8",
+    "react-toolbox": "^2.0.0-beta.13",
     "react-transition-group": "^2.6.0",
     "reactstrap": "^7.1.0",
     "redux": "^4.0.1",

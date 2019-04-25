@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { connect } from 'react-redux';
+import React, { Component } from './node_modules/react';
+import { Container, ListGroup, ListGroupItem, Button } from './node_modules/reactstrap';
+import { CSSTransition, TransitionGroup } from './node_modules/react-transition-group';
+import { connect } from './node_modules/react-redux';
 import { getItems, deleteItem } from '../actions/itemActions';
-import PropTypes from 'prop-types';
+import PropTypes from './node_modules/prop-types';
 
 class ShoppingList extends Component {
   static propTypes = {
@@ -54,6 +54,8 @@ const mapStateToProps = state => ({
   item: state.item,
   isAuthenticated: state.auth.isAuthenticated
 });
+
+// export default ShoppingList;
 
 export default connect(
   mapStateToProps,

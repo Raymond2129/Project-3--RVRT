@@ -6,8 +6,12 @@ import React, { Component } from 'react';
 // import ItemModal from './components/pages/Items';
 // import Register from './components/pages/Register';
 import AppNavbar from './components/navbar/AppNavbar';
+import Activities from './components/pages/Data/activities/Activities';
+import DIYs from './components/pages/Data/diys/DIYs';
+import RepairShops from './components/pages/Data/repairShops/RepairShops';
+import Campgrounds from './components/pages/Data/campgrounds/Campgrounds';
 // import ShoppingList from './components/pages/shoppingList';
-import TestCards from './components/pages/Data/campgrounds/Campgrounds';
+
 
 import { Container } from 'reactstrap';
 import { Provider } from 'react-redux';
@@ -31,7 +35,10 @@ class App extends Component {
           <Container>
             {/* <ItemModal />
             <ShoppingList /> */}
-            <TestCards />
+            <Campgrounds />
+            <RepairShops />
+            <Activities />
+            <DIYs />
           </Container>
         </div>
       </Provider>

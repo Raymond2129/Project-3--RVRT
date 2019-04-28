@@ -20,7 +20,10 @@ if (process.env.NODE_ENV === 'production') {
 if (process.env.MONGODB_URI){
   mongoose.connect(process.env.MONGODB_URI)
 }else{
-  mongoose.connect(databaseUri);
+  mongoose.connect(databaseUri,{
+    useNewUrlParser:true,
+    useCreateIndex:true
+  });
 }
 console.log(databaseUri);
 

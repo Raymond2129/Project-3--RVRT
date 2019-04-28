@@ -32,6 +32,7 @@ const FavoriteSchema = new Schema(
   // },
   // { timestamps:true }
 );
+const favorite = mongoose.model('favorite', FavoriteSchema);
+module.exports = favorite
 
-// export the new Schema so we could modify it using Node.js
-module.exports = mongoose.model("Favorite", FavoriteSchema);
+

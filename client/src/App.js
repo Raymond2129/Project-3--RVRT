@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import Main from './components/pages/Main';
-// import Login from './components/auth/LoginModal';
-// import Logout from './components/auth/Logout';
-// import RegisterModal from './components/auth/RegisterModal';
+import Login from './components/auth/LoginModal';
+import Logout from './components/auth/Logout';
+import RegisterModal from './components/auth/RegisterModal';
 // import ItemModal from './components/pages/Items';
 // import Register from './components/pages/Register';
 import AppNavbar from './components/navbar/AppNavbar';

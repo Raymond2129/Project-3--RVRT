@@ -12,8 +12,7 @@ import RepairShops from './components/pages/Data/repairShops/RepairShops';
 import Campgrounds from './components/pages/Data/campgrounds/Campgrounds';
 // import ShoppingList from './components/pages/shoppingList';
 
-
-import { Container } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/authActions';
@@ -33,12 +32,16 @@ class App extends Component {
         <div className='App'>
           <AppNavbar />
           <Container>
-            {/* <ItemModal />
-            <ShoppingList /> */}
+            <Row>
             <Campgrounds />
             <RepairShops />
+            </Row>
+            </Container>
+            <Container>
+              <Row>
             <Activities />
             <DIYs />
+            </Row>
           </Container>
         </div>
       </Provider>

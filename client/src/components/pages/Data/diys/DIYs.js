@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
+import { Card, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 // import Button from 'react-toolbox/lib/button';
 import diy from './images/diy.jpg';
 
@@ -7,18 +7,10 @@ import diy from './images/diy.jpg';
 const dummyText = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.';
 
 const DIYs = () => (
-  <Card style={{width: '350px'}}>
+  <Card style={{width: '250px'}}>
     <CardTitle
       avatar={diy}
       title="Avatar style title"
-      subtitle="Subtitle here"
-    />
-    <CardMedia
-      aspectRatio="wide"
-      image="https://placeimg.com/800/450/nature"
-    />
-    <CardTitle
-      title="Title goes here"
       subtitle="Subtitle here"
     />
     <CardText>{dummyText}</CardText>

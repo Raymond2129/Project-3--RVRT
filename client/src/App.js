@@ -12,7 +12,7 @@ import RepairShops from './components/pages/Data/repairShops/RepairShops';
 import Campgrounds from './components/pages/Data/campgrounds/Campgrounds';
 // import ShoppingList from './components/pages/shoppingList';
 
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/authActions';
@@ -31,16 +31,17 @@ class App extends Component {
       <Provider store={store}>
         <div className='App'>
           <AppNavbar />
-          <Container>
+          <Container fluid style={{lineHeight: '25px'}}>
             <Row>
-            <Campgrounds />
-            <RepairShops />
+            <Col md={4}> <Campgrounds /> </Col>
+            <Col md={{ span:4, offset: 4 }}><RepairShops /></Col>
             </Row>
-            </Container>
-            <Container>
+            <Row>
+            <Col md={{ span:6, offset: 6 }}>md=6 offset-md=3</Col>
+            </Row>
               <Row>
-            <Activities />
-            <DIYs />
+              <Col md={4} ><Activities /></Col>
+              <Col md={{ span:4, offset: 4 }}><DIYs /></Col>
             </Row>
           </Container>
         </div>

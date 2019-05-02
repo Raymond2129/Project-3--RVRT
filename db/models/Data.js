@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // this will be our data base's data structure
-const DataSchema = new Schema(
+const Data = new Schema(
   {
     map_id: {
       type:Object,
@@ -32,7 +32,6 @@ const DataSchema = new Schema(
   },
   { timestamps:true }
 );
-const Data = mongoose.model('Data', DataSchema);
-module.exports = Data
-// export the new Schema so we could modify it using Node.js
+module.exports = mongoose.model('Data',Data);
+// expor9t the new Schema so we could modify it using Node.js
 // module.exports = mongoose.model("Data", DataSchema);

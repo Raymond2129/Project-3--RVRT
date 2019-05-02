@@ -1,1 +1,1 @@
-export {default} from "./DIYs.js.js";
+export {default} from "./DIYs.js";

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
-// import Button from 'react-toolbox/lib/button';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, CardMedia, CardTitle, CardText, CardActions }  from 'react-toolbox/lib/card';
+import { Dropdown, DropdownButton} from 'react-bootstrap/';
 import tools from './images/tools.jpg';
 
 
@@ -9,24 +8,25 @@ const dummyText = 'Lorem Ipsum is simply dummy text of the printing and typesett
 
 const RepairShops = () => (
   <Card style={{width: '350px'}}>
+
     <CardTitle
       avatar={tools}
       title="Avatar style title"
       subtitle="Subtitle here"
     />
-    <CardMedia
-      aspectRatio="wide"
-      image="https://placeimg.com/800/450/nature"
-    />
-    <CardTitle
-      title="Title goes here"
-      subtitle="Subtitle here"
-    />
+     <CardMedia>
+      <DropdownButton id="dropdown-item-button" title="Dropdown button">
+      <Dropdown.Item as="button">Ouray</Dropdown.Item>
+      <Dropdown.Item as="button">Another action</Dropdown.Item>
+      <Dropdown.Item as="button">Something else</Dropdown.Item>
+    </DropdownButton>
+    </CardMedia>
     <CardText>{dummyText}</CardText>
     <CardActions>
       {/* <Button label="Action 1" />
       <Button label="Action 2" /> */}
     </CardActions>
+
   </Card>
 );
 

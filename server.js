@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Connect to local mongoDB
 
-const databaseUri= "mongodb://localhost/RVRT";
+const databaseUri= "mongodb://localhost:27017/RVRT";
 
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
@@ -44,9 +44,10 @@ app.get("*", function(req, res) {
 //   .catch(err => console.log(err));
 
 // Use Routes
-app.use('/api/items', require('./routes/api/items'));
+// app.use('/api/items', require('./routes/api/items'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/data', require('./routes/api/data'));
 
 // Serve static assets if in production
 // if (process.env.NODE_ENV === 'production') {

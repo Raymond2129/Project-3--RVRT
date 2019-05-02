@@ -1,27 +1,25 @@
 import React from 'react';
-import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
-// import Button from 'react-toolbox/lib/button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import dyi from './images/dyi.jpg';
+import { Card, CardTitle, CardText, CardMedia, CardActions } from 'react-toolbox/lib/card';
+import {Dropdown, DropdownButton} from 'react-bootstrap/';
+import diy from './images/diy.jpg';
 
 
 const dummyText = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.';
 
 const DIYs = () => (
-  <Card style={{width: '350px'}}>
+  <Card style={{width: '250px'}}>
     <CardTitle
-      avatar={dyi}
+      avatar={diy}
       title="Avatar style title"
       subtitle="Subtitle here"
     />
-    <CardMedia
-      aspectRatio="wide"
-      image="https://placeimg.com/800/450/nature"
-    />
-    <CardTitle
-      title="Title goes here"
-      subtitle="Subtitle here"
-    />
+    <CardMedia>
+      <DropdownButton id="dropdown-item-button" title="Dropdown button">
+      <Dropdown.Item as="button">Ouray</Dropdown.Item>
+      <Dropdown.Item as="button">Another action</Dropdown.Item>
+      <Dropdown.Item as="button">Something else</Dropdown.Item>
+    </DropdownButton>
+    </CardMedia>
     <CardText>{dummyText}</CardText>
     <CardActions>
       {/* <Button label="Action 1" />

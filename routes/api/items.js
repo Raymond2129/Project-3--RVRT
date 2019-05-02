@@ -3,7 +3,7 @@ const router = express.Router();
 const auth = require('../../middleware/auth');
 
 // Item Model
-const Item = require('../../models/Item');
+const Item = require('../../db/models/Item');
 
 // @route   GET api/items
 // @desc    Get All Items

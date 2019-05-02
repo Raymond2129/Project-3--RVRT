@@ -11,6 +11,7 @@ import {
   Container
 } from 'reactstrap';
 import { connect } from 'react-redux';
+
 import PropTypes from 'prop-types';
 import LoginModal from '../auth/LoginModal';
 import RegisterModal from '../auth/RegisterModal.js';

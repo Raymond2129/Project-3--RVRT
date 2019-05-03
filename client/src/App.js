@@ -7,7 +7,7 @@ import RegisterModal from './components/auth/RegisterModal';
 // import Register from './components/pages/Register';
 import AppNavbar from './components/navbar/AppNavbar';
 import Activities from './components/pages/Data/activities/Activities';
-import Map from './components/pages/Data/map';
+import DisplayMap from './components/pages/Data/map';
 import DIYs from './components/pages/Data/diys/DIYs';
 import RepairShops from './components/pages/Data/repairShops/RepairShops';
 import Campgrounds from './components/pages/Data/campgrounds/Campgrounds';
@@ -39,7 +39,7 @@ class App extends Component {
             <Col md={{ span:4, offset: 4 }}><RepairShops /></Col>
             </Row>
             <Row>
-            <Col md={{ span:6, offset: 6 }}><Map /></Col>
+            <Col md={{ span:6, offset: 6 }}><DisplayMap /></Col>
             </Row>
               <Row>
               <Col md={4} ><Activities /></Col>

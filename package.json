@@ -4,11 +4,8 @@
   "description": "RVRT",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "server": "nodemon server.js"
-
   },
   "author": "Ray Province",
   "license": "MIT",
@@ -26,6 +23,6 @@
     "validator": "^10.11.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.11"
+    "nodemon": "^1.19.0"
   }
 }

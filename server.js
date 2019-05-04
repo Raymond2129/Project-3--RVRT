@@ -1,65 +1,46 @@
+
 const express = require('express');
 const mongoose = require('mongoose');
-const path = require('path');
-const config = require('config');
-
+const bodyParser = require("body-parser");
+const passport = require("passport");
+const users = require("./routes/api/users");
+// const routes = require('./routes');
 const app = express();
 
 // Bodyparser Middleware
-app.use(express.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
+app.use(bodyParser.json());
 
-
-// Connect to local mongoDB
-
-const databaseUri= "mongodb://localhost:27017/RVRT";
-
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('client/build'));
-}
-if (process.env.MONGODB_URI){
-  mongoose.connect(process.env.MONGODB_URI)
-}else{
-  mongoose.connect(databaseUri,{
-    useNewUrlParser:true,
-    useCreateIndex:true
-  });
-}
-console.log(databaseUri);
-
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-// DB Config
-// const db = config.get('mongoURI');
-// // const db = "mongodb://localhost";
-
-// // Connect to Mongo
-// mongoose
-//   .connect(db, {
-//     useNewUrlParser: true,
-//     useCreateIndex: true
-//   }) // Adding new mongo url parser
-//   .then(() => console.log('MongoDB Connected...'))
-//   .catch(err => console.log(err));
-
-// Use Routes
-// app.use('/api/items', require('./routes/api/items'));
-app.use('/api/users', require('./routes/api/users'));
-app.use('/api/auth', require('./routes/api/auth'));
-app.use('/api/data', require('./routes/api/data'));
-
-// Serve static assets if in production
 // if (process.env.NODE_ENV === 'production') {
 //   // Set static folder
 //   app.use(express.static('client/build'));
-
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-//   });
 // }
+  // app.use(routes);
+//  DB config
+  const db = require("./config/keys").mongoURI;
 
-const port = process.env.PORT || 5000;
+// Connect to local mongoDB
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true },
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+  )
+
+    .then(() => console.log("MongoDB successfully 🔗connected"))
+    .catch(err => console.log(err));
+  // Passport middleware
+  app.use(passport.initialize());
+  // Passport config
+  require("./config/passport")(passport);
+  // Routes
+  app.use("/api/users", users);
+
+    const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Server port ⚓️ ${port}`));
 // fa016130-5e58-41ed-9c29-f0bb0a77a845

@@ -1,5 +1,5 @@
 const express = require('express');
-let Data = require ('../../db/models/Data');
+const Data = require ('../../models/Data');
 const dataRoute = express.Router();
 
 

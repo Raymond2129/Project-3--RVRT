@@ -1,55 +1,62 @@
 import React, { Component } from 'react';
-// import Main from './components/pages/Main';
-import Login from './components/auth/LoginModal';
-import Logout from './components/auth/Logout';
-import RegisterModal from './components/auth/RegisterModal';
-// import ItemModal from './components/pages/Items';
-// import Register from './components/pages/Register';
-import AppNavbar from './components/navbar/AppNavbar';
-import Activities from './components/pages/Data/activities/Activities';
-import Map from './components/pages/Data/map';
-import DIYs from './components/pages/Data/diys/DIYs';
-import RepairShops from './components/pages/Data/repairShops/RepairShops';
-import Campgrounds from './components/pages/Data/campgrounds/Campgrounds';
-// import ShoppingList from './components/pages/shoppingList';
-import { Container, Row, Col } from 'reactstrap';
-import { Provider } from 'react-redux';
-import store from './store';
-import { loadUser } from './actions/authActions';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+// import { Button } from 'reactstrap';
+
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./utils/setAuthToken";
+import { setCurrentUser, logoutUser } from "./actions/authActions";
+
+import { Provider } from "react-redux";
+import store from "./store";
+import "./App.css";
+import AppNavbar from "./components/layout/Navbar";
+import Landing from "./components/layout/Landing";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
+import PrivateRoute from "./components/private-route/PrivateRoute";
+import Dashboard from "./components/dashboard/Dashboard";
 
 
+
+
+// Check for token to keep user logged in
+if (localStorage.jwtToken) {
+  // Set auth token header auth
+  const token = localStorage.jwtToken;
+  setAuthToken(token);
+  // Decode token and get user info and exp
+  const decoded = jwt_decode(token);
+  // Set user and isAuthenticated
+  store.dispatch(setCurrentUser(decoded));
+// Check for expired token
+  const currentTime = Date.now() / 1000; // to get in milliseconds
+  if (decoded.exp < currentTime) {
+    // Logout user
+    store.dispatch(logoutUser());
+    // Redirect to login
+    window.location.href = "./login";
+  }
+}
 class App extends Component {
-  componentDidMount() {
-    store.dispatch(loadUser());
-  }
+  render(){
+  return (
+    <Provider store={store}>
+    <Router>
+    <div className="App">
+      <AppNavbar />
+      <Route exact path="/" component={Landing} />
+      <Route exact path="/register" component={Register} />
+      <Route exact path="/login" component={Login} />
 
-  render() {
-    return (
-      <Provider store={store}>
-        <div className='App'>
-          <AppNavbar>
-
-</AppNavbar>
-          <Container fluid style={{lineHeight: '25px'}}>
-            <Row>
-            <Col md={4}> <Campgrounds /> </Col>
-            <Col md={{ span:4, offset: 4 }}><RepairShops /></Col>
-            </Row>
-            <Row>
-            <Col md={{ span:6, offset: 6 }}><Map /></Col>
-            </Row>
-              <Row>
-              <Col md={4} ><Activities /></Col>
-              <Col md={{ span:4, offset: 4 }}><DIYs /></Col>
-            </Row>
-          </Container>
-        </div>
-      </Provider>
-    );
-  }
+      <Switch>
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      </Switch>
+    </div>
+    </Router>
+    </Provider>
+  );
+}
 }
 
 export default App;

@@ -32,6 +32,4 @@ const Data = new Schema(
   },
   { timestamps:true }
 );
-module.exports = mongoose.model('Data',Data);
-// expor9t the new Schema so we could modify it using Node.js
-// module.exports = mongoose.model("Data", DataSchema);
+module.exports = Data = mongoose.model('data', DataSchema);

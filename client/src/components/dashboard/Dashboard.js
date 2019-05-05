@@ -8,6 +8,7 @@ import Campgrounds from "../layout/Campgrounds";
 import RepairShops from "../layout/RepairShops";
 import DIYs from "../layout/DIYs";
 import Maps from "../layout/Maps"
+import FavoriteData from "../dataList/FavoriteData";
 
 
 class Dashboard extends Component {
@@ -41,7 +42,8 @@ return (
             </Button>
           </div>
         </div>
-
+      <Row>
+        <Col md={6}><FavoriteData /></Col></Row>
 
       <Row>
       <Col md={4}> <Campgrounds /> </Col>
@@ -62,6 +64,7 @@ Dashboard.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
+// maps props for Dashboard to 'auth folder' and then sends logout command
 const mapStateToProps = state => ({
   auth: state.auth
 });

@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
+
 // const routes = require('./routes');
 const app = express();
 
@@ -23,6 +24,7 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
   // app.use(routes);
+
 //  DB config
 const db = require("./config/keys").mongoURI;
 

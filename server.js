@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
+
 // const routes = require('./routes');
 const app = express();
 
@@ -15,13 +16,17 @@ app.use(
 );
 app.use(bodyParser.json());
 
-// if (process.env.NODE_ENV === 'production') {
-//   // Set static folder
-//   app.use(express.static('client/build'));
-// }
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+}
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
   // app.use(routes);
+
 //  DB config
-  const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").mongoURI;
 
 // Connect to local mongoDB
 mongoose

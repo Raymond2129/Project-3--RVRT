@@ -24,17 +24,21 @@ npm run client
 
 # Server runs on http://localhost:5000 and client on http://localhost:3000
 ```
-
+Testing with Postman
+[register new user](./client/src/components/layout/images/creating_new_user.png)
+[user after register](./client/src/components/layout/images/user_has_account.png)
 ## Deployment
 
 There is a Heroku post build script so that you do not have to compile your React frontend manually, it is done on the server. Simply push to Heroku and it will build and load the client index.html page
 
 ## App Info
 
-### Author
+### Authors
 
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
+Melissa Stringer 👵
+Raymond Province 🦸‍♂️
+Riley King 👑
+[RVRT](http://www.traversymedia.com)
 
 ### Version
 

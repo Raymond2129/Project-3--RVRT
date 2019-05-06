@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // this will be our data base's data structure
-const Data = new Schema(
+const Data= new Schema(
   {
     map_id: {
       type:Object,
@@ -12,7 +12,7 @@ const Data = new Schema(
       type:String,
       required:true
     },
-    search_type:{
+    searchType:{
       type:String,
       required:true
     },
@@ -28,8 +28,11 @@ const Data = new Schema(
       type:String,
       required:true
     },
+    favorite:{
+      type:String
+    }
 
   },
   { timestamps:true }
 );
-module.exports = Data = mongoose.model('data', DataSchema);
+module.exports = mongoose.model('Data', Data);

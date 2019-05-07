@@ -4,7 +4,7 @@ const dataRoute = express.Router();
 
 
 
-dataRoute.route('/') .get(function(req, res){
+dataRoute.route('/').get(function(req, res){
   Data.find(function(err, data){
     if (err){
       console.log(err,'ARGH, NoData');
@@ -37,7 +37,8 @@ dataRoute.route('/update/:id').post(function(req, res) {
       else
           data.map_id = req.body.map_id;
           data.town = req.body.town;
-          data.search_type = req.body.search_type;
+          data.googleMap= req.body.googleMap;
+          data.searchType = req.body.searchType;
           data.name = req.body.name;
           data.about = req.body.about;
           data.link = req.body.link;

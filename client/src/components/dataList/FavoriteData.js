@@ -3,6 +3,68 @@ import { Card, CardMedia, CardTitle,  CardActions }  from 'react-toolbox/lib/car
 import { Dropdown, DropdownButton} from 'react-bootstrap';
 import van from '../layout/images/van.png';
 
+class MiniFormik extends React.Component{
+    state = {
+        values:this.props.initialValues || {},
+        touched:{},
+        errors: {}
+    };
+
+    handleChange = event => {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        event.persist();
+
+        this.setState(prevState => ({
+            values: {...prevState.values,
+            [name]:value,
+            },
+        }));
+    };
+
+    render() {
+        return this.props.children({
+            ...this.state,
+            handleChange:this.handleChange,
+        })
+    }
+}
+class Reservation extends React.Component {
+    render(){
+        return (
+            <MiniFormik initialValues = {{
+                isGoing:true,
+                numberOfGuests: 2,
+            }}>
+                {({values,handleChange})=> (
+                    <form>
+                        <li
+                        name="isGoing"
+                        type="checkbox"
+                        className={values.isGoing}
+                        onChange={handleChange}
+                        />
+
+
+                    <br />
+
+                        <li
+                        name="numberOfGuests"
+                        type="number"
+                        className={values.numberOfGuests}
+                        onChange={handleChange}
+                        ></li>
+                    </form>
+                )}
+            </MiniFormik>
+        )
+    }
+}
+
+
+
 export default class FavoriteData extends Component {
     constructor(props) {
         super(props);

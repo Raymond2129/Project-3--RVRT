@@ -1,27 +1,51 @@
 import React from 'react';
-import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
-import { Dropdown, DropdownButton} from 'react-bootstrap/';
-import Iframe from 'react-iframe';
-// import Button from 'react-toolbox/lib/button';
+import { Card, CardTitle, CardMedia, CardActions } from 'react-toolbox/lib/card';
+import {Dropdown, DropdownButton} from 'react-bootstrap';
+import van from './images/van.jpg';
 
+export default class Maps extends Components{
+  constructor(props){
+    super(props);
+    this.handleClickDataTown = this.handleClickDataTown.bind(this);
+    this.onChangeDataTown = this.onChangeDataTown.bind(this);
 
+    this.state = {
+      town:
+    };
+toggleDropdown = (e) =>
 
-const Maps = () => (
-  <Card style={{width: '800px'}}>
+  })
+}
+
+  }
+}
+const Maps = (props) => (
+
+  <Card style={{width: '250px'}}>
     <CardTitle
-      title="Select Your Location"
+      avatar={van}
+      title="Avatar style title"
+      subtitle="Subtitle here"
     />
     <CardMedia>
-      <DropdownButton id="dropdown-item-button" title="Dropdown button">
-      <Dropdown.Item as="button"className = "frisco">Frisco</Dropdown.Item>
-      <Dropdown.Item as="button"className = "ouray">Ouray</Dropdown.Item>
-      <Dropdown.Item as="button"className = "pagosa">Pagosa Springs</Dropdown.Item>
-      <Dropdown.Item as="button"className = "salida">Salida</Dropdown.Item>
-      <Dropdown.Item as="button"className = "steamboat">Steamboat Springs</Dropdown.Item>
+
+      <DropdownButton id="dropdown-item-button" title="Dropdown button" key={props.id} onClick = {()=> props.handleClick(props.id, props.clicked)}>
+      <Dropdown.Item as="button">Frisco</Dropdown.Item>
+      <Dropdown.Item as="button">Ouray</Dropdown.Item>
+      <Dropdown.Item as="button">Pagosa Springs</Dropdown.Item>
+      <Dropdown.Item as="button">Salida</Dropdown.Item>
+      <Dropdown.Item as="button">Steamboat Springs</Dropdown.Item>
     </DropdownButton>
     </CardMedia>
-    <Iframe src="https://www.google.com/maps/d/embed?mid=1p6mQhsS5flYu4HUIPTOdcY2oX2MjOOga" width="800" height="800"></Iframe>
-    <CardText></CardText>
+    <div className = "card" id = "img-card">
+    <div className = "img-container">
+    <img
+      id = {props.id}
+      src = {props.image}
+      alt = {props.town}
+      />
+    </div>
+    </div>
     <CardActions>
       {/* <Button label="Action 1" />
       <Button label="Action 2" /> */}

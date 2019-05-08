@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class DataList extends Component {
-    render() {
-        return (
-            <div>
-                <p>Welcome to Todos List Component!!</p>
-            </div>
-        )
+class Activities extends React.Component{
+
+    render(){
+        return <div><h1>Here are some Things to do on your trip</h1>
+                <li>{this.props.name}</li>
+                </div>;
     }
 }

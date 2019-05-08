@@ -12,6 +12,9 @@ const Data= new Schema(
       type:String,
       required:true
     },
+    googleMap:{
+      type: String
+    },
     searchType:{
       type:String,
       required:true

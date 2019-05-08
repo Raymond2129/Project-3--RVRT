@@ -24,7 +24,6 @@ export default class FavoriteData extends Component {
             favorite:false
         }
     }
-
     onChangeDataTown(e){
         this.setState({
             town:e.target.value
@@ -93,40 +92,28 @@ export default class FavoriteData extends Component {
     </CardMedia>
     <CardActions>
     <div className="form-group">
-        <label>Town
-            <input type = "submit" value = "Save" className= "btn btn-primary"/>
-        </label>
-        <input className="form-control"
+        <label>Town</label>
+            <li className="form-control"
             value={this.state.town}
-            onChange={this.onChangeDataTown}
-                />
+            onChange={this.onChangeDataTown}><input type = "submit" value = "Save" className= "btn btn-primary"/></li>
     </div>
     <div className="form-group">
-        <label>Activity
-            <input type = "submit" value = "Save" className= "btn btn-primary"/>
-        </label>
-        <input className="form-control"
+        <label>Activity</label>
+        <li className="form-control"
             value={this.state.searchType}
-            onChange={this.onChangeDataSearchType}
-                />
+            onChange={this.onChangeDataSearchType}><input type = "submit" value = "Save" className= "btn btn-primary"/></li>
     </div>
     <div className="form-group">
-        <label>Name
-            <input type = "submit" value = "Save" className= "btn btn-primary"/>
-        </label>
-        <input className="form-control"
+        <label>Name </label>
+        <li className="form-control"
             value={this.state.name}
-            onChange={this.onChangeDataName}
-                />
+            onChange={this.onChangeDataName}><input type = "submit" value = "Save" className= "btn btn-primary"/></li>
     </div>
     <div className="form-group">
-        <label>Link
-            <input type = "submit" value = "Save" className= "btn btn-primary"/>
-        </label>
-        <input className="form-control"
+        <label>Link</label>
+        <li className="form-control"
             value={this.state.link}
-            onChange={this.onChangeDataLink}
-                />
+            onChange={this.onChangeDataLink}></li><input type = "submit" value = "Save" className= "btn btn-primary"/>
     </div>
     <div className="form-group">
         <input type="submit" value="Create Favorites" className="btn btn-primary" />

@@ -7,7 +7,7 @@ import Activities from "../layout/Activities";
 import Campgrounds from "../layout/Campgrounds";
 import RepairShops from "../layout/RepairShops";
 import DIYs from "../layout/DIYs";
-import Maps from "../layout/Maps"
+// import Maps from "../layout/Maps"
 import FavoriteData from "../dataList/FavoriteData";
 
 
@@ -42,7 +42,7 @@ return (
             </Button>
           </div>
         </div>
-      <Row>
+<Row>
         <Col md={6}><FavoriteData /></Col></Row>
 
       <Row>
@@ -50,7 +50,7 @@ return (
       <Col md={{ span:4, offset: 4 }}><RepairShops /></Col>
       </Row>
       <Row>
-      <Col md={{ span:6, offset: 6 }}><Maps /></Col>
+      <Col md={{ span:6, offset: 6 }}></Col>
       </Row>
         <Row>
         <Col md={4} ><Activities /></Col>

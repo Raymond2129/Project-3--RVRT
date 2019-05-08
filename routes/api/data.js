@@ -3,8 +3,8 @@ const Data = require ('../../models/Data');
 const dataRoute = express.Router();
 
 
-
-dataRoute.route('/') .get(function(req, res){
+let id = req.params.id;
+dataRoute.route('/').get(function(req, res){
   Data.find(function(err, data){
     if (err){
       console.log(err,'ARGH, NoData');
@@ -14,8 +14,8 @@ dataRoute.route('/') .get(function(req, res){
   });
 });
 dataRoute.route('/:id').get(function(req, res) {
-  let id = req.params.id;
-  Data.findById(id, function(err, data) {
+  let id = req.params.map_id;
+  Data.find(map_id, function(err, data) {
       res.json(data);
   });
 });
@@ -31,13 +31,14 @@ dataRoute.route('/add').post(function(req, res) {
       });
 });
 dataRoute.route('/update/:id').post(function(req, res) {
-  Data.findById(req.params.id, function(err, data) {
+  Data.find(req.params.map_id, function(err, data) {
       if (!data)
           res.status(404).send("data is not found");
       else
           data.map_id = req.body.map_id;
           data.town = req.body.town;
-          data.search_type = req.body.search_type;
+          data.googleMap= req.body.googleMap;
+          data.searchType = req.body.searchType;
           data.name = req.body.name;
           data.about = req.body.about;
           data.link = req.body.link;

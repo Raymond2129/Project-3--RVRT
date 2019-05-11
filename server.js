@@ -17,7 +17,7 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true
   }) // Adding new mongo url parser
-  .then(() => console.log('MongoDB Connected...'))
+  .then(() => console.log('MongoDB Connected...🔗🥳'))
   .catch(err => console.log(err));
 
 // Use Routes
@@ -37,4 +37,4 @@ if (process.env.NODE_ENV === 'production') {
 
 const port = process.env.PORT || 3001;
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+app.listen(port, () => console.log(`Server started on ⚓️ ${port}`));

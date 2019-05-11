@@ -83,7 +83,7 @@ class RegisterModal extends Component {
     return (
       <div>
         <NavLink onClick={this.toggle} href='#'>
-        <button type="button" class="btn btn-secondary btn-lg">Register</button>
+        <button type="button" className="btn btn-secondary btn-lg">Register</button>
         </NavLink>
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>

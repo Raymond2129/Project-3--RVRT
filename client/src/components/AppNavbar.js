@@ -62,11 +62,11 @@ class AppNavbar extends Component {
     return (
        <div>
 
-        <Navbar color='' expand='sm' className='mb-5'><img src={van} alt="Logo" />
+        <Navbar color='' expand='sm' className='mb-5'><img src={van} style = {{width:'325px'}} alt="Logo" />
           <Container>
             <NavbarBrand href='/'><h1>RV Rubber Tramps</h1></NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
+            <Collapse isOpen={this.state.isOpen} navbar style = {{paddingLeft:'120px'}}>
               <Nav className='ml-auto' navbar>
                 {isAuthenticated ? authLinks : guestLinks}
               </Nav>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardMedia,  CardTitle, CardText } from "react-toolbox/lib/card";
+import './css/index.css'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -25,24 +26,22 @@ const campText =
 const Activities = () => (
 
 <Container>
-     <Row className="justify-content-md-center">
-
-      <Col md={4}>
-        <Card style={{ width: "250px" }}>
-        <CardTitle avatar={adven} />
+     <Row >
+      <Col xs={3}>
+      <Card style={{ width: "250px"}}>
+          <CardTitle avatar={camp}/>
           <CardMedia >
-            <CardTitle avatar={ghost} title="Alta (Ghost Town)"> </CardTitle>
-            <CardText>{campText}</CardText>
+            <CardTitle avatar={tent} title="Amphitheater Campground" />
+            <CardText>{dummyText}</CardText>
           </CardMedia>
         </Card>
       </Col>
-
-      <Col md={{ span: 2, offset: 1}}>
-      <Card style={{ width: "250px" }}>
+      <Col md={{ span:2, offset:2}}>
+      <Card style={{ width: "300px" }}>
         <Iframe
-          url="https://www.google.com/maps/d/embed?mid=1p6mQhsS5flYu4HUIPTOdcY2oX2MjOOga"
-          width="600px"
-          height="550px"
+          url="https://www.google.com/maps/d/embed?mid=1p6mQhsS5flYu4HUIPTOdcY2oX2MjOOga&z=13"
+          width="650px"
+          height="775px"
           id="myId"
           className="myClassname"
           display="initial"
@@ -50,16 +49,9 @@ const Activities = () => (
         />
         </Card>
       </Col>
+      <Col></Col>
+      <Col></Col>
 
-      <Col md={{ span: 2, offset: 2}}>
-        <Card style={{ width: "250px" }}>
-          <CardTitle avatar={camp} />
-          <CardMedia>
-            <CardTitle avatar={tent} title="Amphitheater Campground" />
-            <CardText>{dummyText}</CardText>
-          </CardMedia>
-        </Card>
-      </Col>
 
     </Row>
 
@@ -74,6 +66,16 @@ const Activities = () => (
             <CardText>{toolText}</CardText>
           </CardMedia>
         </Card>
+      </Col>
+      <Col >
+      <Card style={{ width: "250px" }}>
+        <CardTitle avatar={adven} />
+          <CardMedia >
+            <CardTitle avatar={ghost} title="Alta (Ghost Town)"> </CardTitle>
+            <CardText>{campText}</CardText>
+          </CardMedia>
+        </Card>
+
       </Col>
 
       <Col >

@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardMedia,  CardTitle, CardText } from "react-toolbox/lib/card";
-import './css/index.css'
+// import './css/index.css'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';

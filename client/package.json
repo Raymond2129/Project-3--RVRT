@@ -2,23 +2,23 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://raymond2129.github.io/Project-3--RVRT/",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
-    "classnames": "^2.2.6",
-    "downshift": "^3.2.10",
-    "jwt-decode": "^2.2.0",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
     "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
     "react-iframe": "^1.8.0",
     "react-redux": "^7.0.3",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",
+    "react-scripts": "^3.0.1",
     "react-toolbox": "^2.0.0-beta.13",
+    "react-transition-group": "^4.0.1",
     "reactstrap": "^8.0.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,20 +26,18 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ]
 }
